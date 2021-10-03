@@ -31,24 +31,24 @@ function Layout(){
                 return
              }
              // branch conditions for what operation the number sets need to do when the user enters the equal sign
-            else if(e.target.id == "=" && calculator.reserve != null){
-                if(calculator.operator == "+"){
+            else if(e.target.id === "=" && calculator.reserve != null){
+                if(calculator.operator === "+"){
                     document.getElementById("screen").innerHTML = parseInt(calculator.reserve) + parseInt(calculator.firstSet)
                 }
-                else if(calculator.operator == "-"){
+                else if(calculator.operator === "-"){
                     document.getElementById("screen").innerHTML = parseInt(calculator.reserve) - parseInt(calculator.firstSet)
                 }
-                else if(calculator.operator == "*"){
+                else if(calculator.operator === "*"){
                     document.getElementById("screen").innerHTML = parseInt(calculator.reserve) *  parseInt(calculator.firstSet)
                 }
-                else if(calculator.operator == "%"){
+                else if(calculator.operator === "%"){
                     document.getElementById("screen").innerHTML = parseInt(calculator.reserve) % parseInt(calculator.firstSet)
                 }
-                else if(calculator.operator == "÷"){
+                else if(calculator.operator === "÷"){
                     document.getElementById("screen").innerHTML = parseInt(calculator.reserve) / parseInt(calculator.firstSet)
                 }
             } // if the second set is null, and we select an operator, store the values
-            else if( (e.target.id == "+" || e.target.id == "-" || e.target.id == "*" || e.target.id == "÷" || e.target.id == "%") && calculator.reserve == null){
+            else if( (e.target.id === "+" || e.target.id === "-" || e.target.id === "*" || e.target.id === "÷" || e.target.id === "%") && calculator.reserve == null){
                 calculator.operator = e.target.id
                 calculator.reserve = calculator.firstSet
                 calculator.firstSet = null
